@@ -9,8 +9,9 @@ public class Weapon : MonoBehaviour
 
     public Projectile projectilePrefab;
 
-
     private Vector2 shootDirection;
+
+    public float fireRate = 240f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,8 @@ public class Weapon : MonoBehaviour
 
     public void Fire()
     {
-
+        Projectile projectile = Instantiate(projectilePrefab, muzzle.transform.position, Quaternion.Euler(0, 0, 0));
+        projectile.movementVector = shootDirection;
     }
 
 

@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public Weapon weapon;
 
+    private float timeSinceFire = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +23,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        //rigidbodyMover.SetMovementVector(inputVector);
-        if (Input.GetButton("Fire1"))
+        rigidbodyMover.SetMovementVector(inputVector);
+        timeSinceFire += Time.deltaTime;
+        if (Input.GetButton("Fire1") && timeSinceFire > 60f/weapon.fireRate)
         {
             weapon.Fire();
+            timeSinceFire = 0f;
         }
 
     }

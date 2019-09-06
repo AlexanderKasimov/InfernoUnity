@@ -8,7 +8,7 @@ public class RigidbodyMover : MonoBehaviour
     public float speed = 2f;
     private Vector2 movementVector;
 
-    private PlayerController playerController;
+    //private PlayerController playerController;
 
 
 
@@ -16,13 +16,13 @@ public class RigidbodyMover : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerController = GetComponent<PlayerController>();
+        //playerController = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetMovementVector(playerController.inputVector);
+        //SetMovementVector(playerController.inputVector);
     }
 
     public void SetMovementVector(Vector2 inputVector)
