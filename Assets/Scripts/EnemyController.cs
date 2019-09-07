@@ -31,6 +31,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //3 круга
         float distanceToTarget = (target.transform.position - transform.position).magnitude;        
         if (distanceToTarget > bigRadius)
         {
@@ -76,11 +77,19 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        movementVector = (movementPoint - (Vector2)transform.position).normalized;
+        movementVector = (((Vector2)target.transform.position + movementPoint) - (Vector2)transform.position).normalized;
 
         rigidbodyMover.SetMovementVector(movementVector);
 
     }
+
+    IEnumerator Attack()
+    {
+        yield return new WaitForSeconds(1f);
+        //Physics2D.BoxCast((Vector2)transform.position + movementVector * 0.3f, 0.5f);
+
+    }
+
 
     private void GenerateMovementPoint()
     {
@@ -98,7 +107,7 @@ public class EnemyController : MonoBehaviour
         if (target != null)
         {
             //Gizmos.DrawWireSphere(target.transform.position, movementPointRadius);
-            Gizmos.DrawWireCube(movementPoint, new Vector2(0.2f, 0.2f));
+            Gizmos.DrawWireCube((Vector2)target.transform.position + movementPoint, new Vector2(0.2f, 0.2f));
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(target.transform.position, bigRadius);
             Gizmos.color = Color.yellow;

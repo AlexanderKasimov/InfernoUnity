@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public float damage = 1f;
+
     public Vector2 movementVector;
     private RigidbodyMover rigidbodyMover;
 
@@ -19,5 +21,16 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DamageHandler damageHandler = collision.gameObject.GetComponent<DamageHandler>();
+        if (damageHandler != null)
+        {
+            damageHandler.HandleDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }
