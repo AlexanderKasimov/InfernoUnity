@@ -20,6 +20,14 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 movementPoint;
 
+    public float attackRange = 1.5f;
+    public float delayBeforeAttack = 0.3f;
+    public float delayAfterAttack = 0.5f;
+    public float attackBoxSize = 1f;
+
+    [HideInInspector]
+    public bool isAttacking = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +86,16 @@ public class EnemyController : MonoBehaviour
         }
 
         movementVector = (((Vector2)target.transform.position + movementPoint) - (Vector2)transform.position).normalized;
+        if (isAttacking)
+        {
+            rigidbodyMover.SetMovementVector(new Vector2(0f,0f));
+            return;
+        }
+
+        if (distanceToTarget < attackRange )
+        {
+            StartCoroutine("Attack");
+        }
 
         rigidbodyMover.SetMovementVector(movementVector);
 
@@ -85,9 +103,16 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator Attack()
     {
-        yield return new WaitForSeconds(1f);
-        //Physics2D.BoxCast((Vector2)transform.position + movementVector * 0.3f, 0.5f);
-
+        isAttacking = true;
+        yield return new WaitForSeconds(delayBeforeAttack);
+        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + movementVector, new Vector2(attackBoxSize, attackBoxSize),0f,movementVector,0f,LayerMask.GetMask("Player"));
+        if (hit.collider != null)
+        {
+            DamageHandler damageHandler = hit.collider.gameObject.GetComponent<DamageHandler>();
+            damageHandler.HandleDamage(1f);
+        }
+        yield return new WaitForSeconds(delayAfterAttack);
+        isAttacking = false;
     }
 
 
@@ -98,11 +123,11 @@ public class EnemyController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //if (isAttacking)
-        //{
-        //    Gizmos.color = Color.red;
-        //    Gizmos.DrawWireCube((Vector2)transform.position + movementDir * 0.3f, new Vector2(0.5f, 0.5f));
-        //}
+        if (isAttacking)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube((Vector2)transform.position + movementVector, new Vector2(attackBoxSize, attackBoxSize));
+        }
 
         if (target != null)
         {
