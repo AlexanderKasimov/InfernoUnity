@@ -15,6 +15,10 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, 2f);
         rigidbodyMover = GetComponent<RigidbodyMover>();
         rigidbodyMover.SetMovementVector(movementVector);
+        //rotate to movement - новый способ поворота вещей (Singed angle мб лучше) + мб лучше поворачивать сразу при спавне
+        //если поворачивать здесь, то лучше инкапсулируется функционал, не нужно лезть в вепон чтобы менять поведение проджектайла
+        float deltaRot = Mathf.Atan2(movementVector.y, movementVector.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, deltaRot);
     }
 
     // Update is called once per frame

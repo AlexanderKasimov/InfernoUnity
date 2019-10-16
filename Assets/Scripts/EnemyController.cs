@@ -105,14 +105,19 @@ public class EnemyController : MonoBehaviour
     {
         isAttacking = true;
         yield return new WaitForSeconds(delayBeforeAttack);
-        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + movementVector, new Vector2(attackBoxSize, attackBoxSize),0f,movementVector,0f,LayerMask.GetMask("Player"));
+        AttackAction();
+        yield return new WaitForSeconds(delayAfterAttack);
+        isAttacking = false;
+    }
+
+    public virtual void AttackAction()
+    {
+        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + movementVector, new Vector2(attackBoxSize, attackBoxSize), 0f, movementVector, 0f, LayerMask.GetMask("Player"));
         if (hit.collider != null)
         {
             DamageHandler damageHandler = hit.collider.gameObject.GetComponent<DamageHandler>();
             damageHandler.HandleDamage(1f);
         }
-        yield return new WaitForSeconds(delayAfterAttack);
-        isAttacking = false;
     }
 
 
