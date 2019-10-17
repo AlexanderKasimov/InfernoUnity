@@ -16,11 +16,12 @@ public class DamageHandler : MonoBehaviour
     private bool isBlinking = false;
     public float blinkDuration = 0.2f;
 
-
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         curHP = maxHP;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         //можно поставить true в isDead == бессмертие
         //isDead = false;
     }
@@ -57,14 +58,17 @@ public class DamageHandler : MonoBehaviour
         isBlinking = true;
         float t = 0f;
         float materialAlpha = 1f;
-        hitMaskObject.GetComponent<SpriteRenderer>().material.SetColor("_BlinkColor", new Color(1, 1, 1, 1));
+        //hitMaskObject.GetComponent<SpriteRenderer>().material.SetColor("_BlinkColor", new Color(1, 1, 1, 1));
+        spriteRenderer.material.SetColor("_BlinkColor", new Color(1, 1, 1, 1));
         while (t <= blinkDuration)
         {
             t += Time.deltaTime;
             materialAlpha = Mathf.Lerp(1, 0, t/blinkDuration);
-            hitMaskObject.GetComponent<SpriteRenderer>().material.SetColor("_BlinkColor", new Color(1, 1, 1, materialAlpha));
+            spriteRenderer.material.SetColor("_BlinkColor", new Color(1, 1, 1, materialAlpha));
+            //hitMaskObject.GetComponent<SpriteRenderer>().material.SetColor("_BlinkColor", new Color(1, 1, 1, materialAlpha));
             yield return null;
         }
+        spriteRenderer.material.SetColor("_BlinkColor", new Color(1, 1, 1, 0));
         isBlinking = false;
     }
 
