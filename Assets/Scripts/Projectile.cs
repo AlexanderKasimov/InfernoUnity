@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     public Vector2 movementVector;
     private RigidbodyMover rigidbodyMover;
 
+    public GameObject destroyEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,19 @@ public class Projectile : MonoBehaviour
         if (damageHandler != null)
         {
             damageHandler.HandleDamage(damage);
+            playVFX();
+            Destroy(gameObject);
+        }
+        else
+        {
+            playVFX();
             Destroy(gameObject);
         }
     }
+
+    public void playVFX()
+    {
+        Instantiate(destroyEffect, transform.position, Quaternion.Euler(0, 0, 0));
+    }
+
 }

@@ -28,12 +28,19 @@ public class EnemyController : MonoBehaviour
     [HideInInspector]
     public bool isAttacking = false;
 
+    private Animator animator;
+
+    public GameObject hitMaskObject;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbodyMover = GetComponent<RigidbodyMover>();
         target = FindObjectOfType<PlayerController>().gameObject;
+        animator = GetComponent<Animator>();
+        hitMaskObject.GetComponent<Animator>().fireEvents = false;
+        GetComponent<DamageHandler>().hitMaskObject = hitMaskObject;
+        //hitMaskObject.GetComponent<SpriteRenderer>().material.SetColor("_BlinkColor", new Color(1, 1, 1, 0.3f));
     }
 
     // Update is called once per frame
@@ -99,20 +106,40 @@ public class EnemyController : MonoBehaviour
 
         rigidbodyMover.SetMovementVector(movementVector);
 
+        //Rotate to movement
+        if (movementVector.x < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+            hitMaskObject.GetComponent<SpriteRenderer>().flipX = true;
+
+        }
+        if (movementVector.x > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+            hitMaskObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+
     }
 
     IEnumerator Attack()
     {
         isAttacking = true;
-        yield return new WaitForSeconds(delayBeforeAttack);
-        AttackAction();
+        //Update Animator
+        animator.SetBool("isAttacking", isAttacking);
+        hitMaskObject.GetComponent<Animator>().SetBool("isAttacking", isAttacking);
+
+        //yield return new WaitForSeconds(delayBeforeAttack);
+        //AttackAction();
         yield return new WaitForSeconds(delayAfterAttack);
         isAttacking = false;
+        animator.SetBool("isAttacking", isAttacking);
+        hitMaskObject.GetComponent<Animator>().SetBool("isAttacking", isAttacking);
+       
     }
 
     public virtual void AttackAction()
     {
-        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + movementVector, new Vector2(attackBoxSize, attackBoxSize), 0f, movementVector, 0f, LayerMask.GetMask("Player"));
+        RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + new Vector2(movementVector.x * attackRange, 0f), new Vector2(attackBoxSize, attackBoxSize), 0f, movementVector, 0f, LayerMask.GetMask("Player"));
         if (hit.collider != null)
         {
             DamageHandler damageHandler = hit.collider.gameObject.GetComponent<DamageHandler>();
@@ -120,6 +147,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    //AnimEvent - нужен рефактор после добавления дальников - пока не понятно как рефакторить
+    public void DealDamage()
+    {
+        AttackAction();
+    }
 
     private void GenerateMovementPoint()
     {
@@ -131,7 +163,7 @@ public class EnemyController : MonoBehaviour
         if (isAttacking)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireCube((Vector2)transform.position + movementVector, new Vector2(attackBoxSize, attackBoxSize));
+            Gizmos.DrawWireCube((Vector2)transform.position + movementVector * attackRange, new Vector2(attackBoxSize, attackBoxSize));
         }
 
         if (target != null)

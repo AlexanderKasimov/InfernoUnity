@@ -17,12 +17,16 @@ public class PlayerController : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    private float startYScale;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbodyMover = GetComponent<RigidbodyMover>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        startYScale = weapon.transform.localScale.y;
+
     }
 
     // Update is called once per frame
@@ -43,12 +47,14 @@ public class PlayerController : MonoBehaviour
         if (weaponRotation > 90 && weaponRotation < 270)
         {
             spriteRenderer.flipX = true;
-            weapon.GetComponent<SpriteRenderer>().flipY = true;
+            weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, -startYScale, weapon.transform.localScale.z);
+            //weapon.GetComponent<SpriteRenderer>().flipY = true;
         }
         else
         {
             spriteRenderer.flipX = false;
-            weapon.GetComponent<SpriteRenderer>().flipY = false;
+            weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, startYScale, weapon.transform.localScale.z);
+            //weapon.GetComponent<SpriteRenderer>().flipY = false;
         }
 
     }

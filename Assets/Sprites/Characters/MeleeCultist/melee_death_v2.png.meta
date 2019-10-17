@@ -1,31 +1,46 @@
 fileFormatVersion: 2
-guid: 1d18919f5357eaa428340a9728f31eb0
+guid: cf4467438ae08634db3f1b0ea1000adc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5597314865681675075
-    second: weapon_run_0
+      213: -2497914204397741405
+    second: melee_death_v2_0
   - first:
-      213: -145156551373382522
-    second: weapon_run_1
+      213: 8129318817924577071
+    second: melee_death_v2_1
   - first:
-      213: 6267108175492961020
-    second: weapon_run_2
+      213: -8628183380273070312
+    second: melee_death_v2_2
   - first:
-      213: 7102959628707542380
-    second: weapon_run_3
+      213: -8552664707718933280
+    second: melee_death_v2_3
   - first:
-      213: -940620258542649112
-    second: weapon_run_4
+      213: -949098039874362853
+    second: melee_death_v2_4
   - first:
-      213: -4894686084807412507
-    second: weapon_run_5
+      213: -986308730984254334
+    second: melee_death_v2_5
   - first:
-      213: -2690706470843394085
-    second: weapon_run_6
+      213: 6823246930566554843
+    second: melee_death_v2_6
   - first:
-      213: -7506722860281489897
-    second: weapon_run_7
+      213: 4988852091396314336
+    second: melee_death_v2_7
+  - first:
+      213: 4766591773209091163
+    second: melee_death_v2_8
+  - first:
+      213: -2342023951554308139
+    second: melee_death_v2_9
+  - first:
+      213: 4115502172327149146
+    second: melee_death_v2_10
+  - first:
+      213: 1469727145807161529
+    second: melee_death_v2_11
+  - first:
+      213: -3883890313323652331
+    second: melee_death_v2_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,7 +125,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weapon_run_0
+      name: melee_death_v2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c9f221135d15c8409a4ab51baa95144
-      internalID: 5597314865681675075
+      spriteID: 85a26b5558a5b104388068c52c8d9c7d
+      internalID: -2497914204397741405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_1
+      name: melee_death_v2_1
       rect:
         serializedVersion: 2
         x: 48
@@ -145,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 228e31f610141c54a8b703154427a7a1
-      internalID: -145156551373382522
+      spriteID: 0a3840f8dcdcdee4b8375d5db87fccbe
+      internalID: 8129318817924577071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_2
+      name: melee_death_v2_2
       rect:
         serializedVersion: 2
         x: 96
@@ -166,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fe17c8abeae8194aac9d97932046c7c
-      internalID: 6267108175492961020
+      spriteID: ac0fa9a3c088ad5499ed07217b332b8f
+      internalID: -8628183380273070312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_3
+      name: melee_death_v2_3
       rect:
         serializedVersion: 2
         x: 144
@@ -187,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daf7e1d250b08eb47a9b2ea06dab80be
-      internalID: 7102959628707542380
+      spriteID: 2117d8a230e438d4a8d80d77aa122fa7
+      internalID: -8552664707718933280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_4
+      name: melee_death_v2_4
       rect:
         serializedVersion: 2
         x: 192
@@ -208,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43162fa92a321ec4099f8ee30d9d52eb
-      internalID: -940620258542649112
+      spriteID: 61ec9d0f840d6134fb2d6220361b0f2b
+      internalID: -949098039874362853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_5
+      name: melee_death_v2_5
       rect:
         serializedVersion: 2
         x: 240
@@ -229,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce5fa677f4f4e834bbf4ecd8c7fc640f
-      internalID: -4894686084807412507
+      spriteID: ad7c5bf8d6ecf514aa79fb9144bd1094
+      internalID: -986308730984254334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_6
+      name: melee_death_v2_6
       rect:
         serializedVersion: 2
         x: 288
@@ -250,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0391ef2ca31d5245b4aa0c1e0111916
-      internalID: -2690706470843394085
+      spriteID: 8d701d35d8e627445995f5c278d4ae03
+      internalID: 6823246930566554843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_7
+      name: melee_death_v2_7
       rect:
         serializedVersion: 2
         x: 336
@@ -271,8 +286,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84cd78ec6fdf3fb438ab6648f5de776e
-      internalID: -7506722860281489897
+      spriteID: 2e3fafe12540d9d42b2b9053f737f6e8
+      internalID: 4988852091396314336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_death_v2_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213ef06d3bee6d34c8b2e2a472ae3713
+      internalID: 4766591773209091163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_death_v2_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc520187ea68c6468b1c5d000c5bd9a
+      internalID: -2342023951554308139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_death_v2_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17676bd25019e74db7f450aa217a471
+      internalID: 4115502172327149146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_death_v2_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f0bb0210395904f82a6c225a76aba6
+      internalID: 1469727145807161529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_death_v2_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e621de332b7b924b9fd9a5609f654b3
+      internalID: -3883890313323652331
       vertices: []
       indices: 
       edges: []

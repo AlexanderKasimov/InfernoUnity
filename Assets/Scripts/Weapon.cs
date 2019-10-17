@@ -13,16 +13,47 @@ public class Weapon : MonoBehaviour
 
     public float fireRate = 240f;
 
+    public bool useInaccuracy = true;
+    public float maxInaccuracyAngle = 5f;
+
+    public bool useRandomPitch = true;
+    public float minPitch = 0.6f;
+    public float maxPitch = 0.9f;
+    public float defaultPitch = 1f;
+
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Fire()
     {
+        //Добавить разброс
+        Vector2 spreadDir = shootDirection;
+        if (useInaccuracy)
+        {
+            float angle = Random.Range(-maxInaccuracyAngle, maxInaccuracyAngle) * Mathf.Deg2Rad;
+            spreadDir.x = shootDirection.x * Mathf.Cos(angle) - shootDirection.y * Mathf.Sin(angle);
+            spreadDir.y = shootDirection.x * Mathf.Sin(angle) + shootDirection.y * Mathf.Cos(angle);
+        }       
+
         Projectile projectile = Instantiate(projectilePrefab, muzzle.transform.position, Quaternion.Euler(0, 0, 0));
-        projectile.movementVector = shootDirection;
+        projectile.movementVector = spreadDir;
+
+        //Play SFX
+        if (useRandomPitch)
+        {
+            audioSource.pitch = Random.Range(minPitch, maxPitch);
+        }
+        else
+        {
+            audioSource.pitch = defaultPitch;
+        }
+      
+        audioSource.Play();
     }
 
 

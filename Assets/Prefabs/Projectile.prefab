@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6022030996362515324}
   - component: {fileID: 8101322827916113799}
   - component: {fileID: 4543231611526542906}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -684438763
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 656f9bbd0c292fa42ae9d511ddad4acd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12, y: 0.02}
+  m_Offset: {x: 0.19, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -145,6 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   movementVector: {x: 0, y: 0}
+  destroyEffect: {fileID: 1649247890023141690, guid: f84140a8db389cc408c51b4f9c208d43,
+    type: 3}
 --- !u!114 &4543231611526542906
 MonoBehaviour:
   m_ObjectHideFlags: 0

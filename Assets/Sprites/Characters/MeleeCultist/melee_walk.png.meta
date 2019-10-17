@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 1d18919f5357eaa428340a9728f31eb0
+guid: 09e19ada6211f4c47af43b6c389edcb6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5597314865681675075
-    second: weapon_run_0
+      213: -8050774064753098544
+    second: melee_walk_0
   - first:
-      213: -145156551373382522
-    second: weapon_run_1
+      213: 7836189219640023608
+    second: melee_walk_1
   - first:
-      213: 6267108175492961020
-    second: weapon_run_2
+      213: -3444248056547373834
+    second: melee_walk_2
   - first:
-      213: 7102959628707542380
-    second: weapon_run_3
-  - first:
-      213: -940620258542649112
-    second: weapon_run_4
-  - first:
-      213: -4894686084807412507
-    second: weapon_run_5
-  - first:
-      213: -2690706470843394085
-    second: weapon_run_6
-  - first:
-      213: -7506722860281489897
-    second: weapon_run_7
+      213: 5816049821654945427
+    second: melee_walk_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weapon_run_0
+      name: melee_walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c9f221135d15c8409a4ab51baa95144
-      internalID: 5597314865681675075
+      spriteID: 321fdb33693aae34b88033ce3805758c
+      internalID: -8050774064753098544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_1
+      name: melee_walk_1
       rect:
         serializedVersion: 2
         x: 48
@@ -145,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 228e31f610141c54a8b703154427a7a1
-      internalID: -145156551373382522
+      spriteID: e9975b4442e3b0d479dd6f4136006270
+      internalID: 7836189219640023608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_2
+      name: melee_walk_2
       rect:
         serializedVersion: 2
         x: 96
@@ -166,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fe17c8abeae8194aac9d97932046c7c
-      internalID: 6267108175492961020
+      spriteID: ecac324ae9566f84ca31e17a6c09891b
+      internalID: -3444248056547373834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: weapon_run_3
+      name: melee_walk_3
       rect:
         serializedVersion: 2
         x: 144
@@ -187,92 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daf7e1d250b08eb47a9b2ea06dab80be
-      internalID: 7102959628707542380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: weapon_run_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43162fa92a321ec4099f8ee30d9d52eb
-      internalID: -940620258542649112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: weapon_run_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce5fa677f4f4e834bbf4ecd8c7fc640f
-      internalID: -4894686084807412507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: weapon_run_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0391ef2ca31d5245b4aa0c1e0111916
-      internalID: -2690706470843394085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: weapon_run_7
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84cd78ec6fdf3fb438ab6648f5de776e
-      internalID: -7506722860281489897
+      spriteID: bf2aa58318b70bb45ac8cf6a9da8cc4f
+      internalID: 5816049821654945427
       vertices: []
       indices: 
       edges: []

@@ -448,6 +448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   isDead: 0
+  hitMaskObject: {fileID: 0}
+  blinkDuration: 0.2
 --- !u!95 &256666302
 Animator:
   serializedVersion: 3
@@ -548,6 +550,7 @@ GameObject:
   - component: {fileID: 342868175}
   - component: {fileID: 342868174}
   - component: {fileID: 342868176}
+  - component: {fileID: 342868177}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -586,6 +589,12 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
   fireRate: 480
+  useInaccuracy: 1
+  maxInaccuracyAngle: 2
+  useRandomPitch: 1
+  minPitch: 0.7
+  maxPitch: 0.8
+  defaultPitch: 0.7
 --- !u!212 &342868175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -655,6 +664,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &342868177
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342868172}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 15e5adb75deb5a449996ff5cc93b8466, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.367
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &445625889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -795,6 +900,12 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
   fireRate: 480
+  useInaccuracy: 1
+  maxInaccuracyAngle: 5
+  useRandomPitch: 1
+  minPitch: 0.6
+  maxPitch: 0.9
+  defaultPitch: 1
 --- !u!4 &631898326
 Transform:
   m_ObjectHideFlags: 0
@@ -982,6 +1093,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   isDead: 0
+  hitMaskObject: {fileID: 0}
+  blinkDuration: 0.2
 --- !u!114 &688151268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,7 +1318,7 @@ MonoBehaviour:
     type: 3}
   waveCount: 3
   enemiesInWave: 3
-  delayBetweenWaves: 8
+  delayBetweenWaves: 5
 --- !u!4 &931128840
 Transform:
   m_ObjectHideFlags: 0
@@ -1335,6 +1448,12 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
   fireRate: 480
+  useInaccuracy: 1
+  maxInaccuracyAngle: 5
+  useRandomPitch: 1
+  minPitch: 0.6
+  maxPitch: 0.9
+  defaultPitch: 1
 --- !u!4 &1076401094
 Transform:
   m_ObjectHideFlags: 0
@@ -1591,6 +1710,12 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
   fireRate: 480
+  useInaccuracy: 1
+  maxInaccuracyAngle: 5
+  useRandomPitch: 1
+  minPitch: 0.6
+  maxPitch: 0.9
+  defaultPitch: 1
 --- !u!212 &1201974753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1722,6 +1847,12 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
   fireRate: 480
+  useInaccuracy: 1
+  maxInaccuracyAngle: 5
+  useRandomPitch: 1
+  minPitch: 0.6
+  maxPitch: 0.9
+  defaultPitch: 1
 --- !u!212 &1363952445
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1890,6 +2021,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   isDead: 0
+  hitMaskObject: {fileID: 0}
+  blinkDuration: 0.2
 --- !u!114 &1507808218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2100,6 +2233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   isDead: 0
+  hitMaskObject: {fileID: 0}
+  blinkDuration: 0.2
 --- !u!114 &1663446695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2707,6 +2842,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   isDead: 0
+  hitMaskObject: {fileID: 0}
+  blinkDuration: 0.2
 --- !u!114 &2002689654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2802,20 +2939,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 2430002497707148226, guid: ee7da52aa6c0c404cb934b2d25055940,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2430002497707148236, guid: ee7da52aa6c0c404cb934b2d25055940,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.55
+      value: 4.33
       objectReference: {fileID: 0}
     - target: {fileID: 2430002497707148236, guid: ee7da52aa6c0c404cb934b2d25055940,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.12
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2430002497707148236, guid: ee7da52aa6c0c404cb934b2d25055940,
         type: 3}
