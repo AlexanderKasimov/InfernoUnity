@@ -8,22 +8,19 @@ public class DamageHandler : MonoBehaviour
 
     private float curHP;
 
+    //можно поставить true в isDead == бессмертие
     public bool isDead = false;
 
+    private HitReaction hitReactionObject;
+    //для HitReaction использующего дубликаты
     [HideInInspector]
     public GameObject hitMaskObject;
 
-    private bool isBlinking = false;
-    public float blinkDuration = 0.2f;
-
-    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         curHP = maxHP;
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        //можно поставить true в isDead == бессмертие
-        //isDead = false;
+        hitReactionObject = GetComponent<HitReaction>();
     }
 
 
@@ -40,10 +37,7 @@ public class DamageHandler : MonoBehaviour
         }
 
         //Blink Effect - лучше вынести в другой модуль? разделить графику от логики - зачем?
-        if (!isBlinking)
-        {
-            StartCoroutine("Blink");
-        }
+        hitReactionObject.StartBlinking();    
 
     }
 
@@ -51,25 +45,6 @@ public class DamageHandler : MonoBehaviour
     {
         isDead = true;
         Destroy(gameObject);
-    }
-
-    private IEnumerator Blink()
-    {
-        isBlinking = true;
-        float t = 0f;
-        float materialAlpha = 1f;
-        //hitMaskObject.GetComponent<SpriteRenderer>().material.SetColor("_BlinkColor", new Color(1, 1, 1, 1));
-        spriteRenderer.material.SetColor("_BlinkColor", new Color(1, 1, 1, 1));
-        while (t <= blinkDuration)
-        {
-            t += Time.deltaTime;
-            materialAlpha = Mathf.Lerp(1, 0, t/blinkDuration);
-            spriteRenderer.material.SetColor("_BlinkColor", new Color(1, 1, 1, materialAlpha));
-            //hitMaskObject.GetComponent<SpriteRenderer>().material.SetColor("_BlinkColor", new Color(1, 1, 1, materialAlpha));
-            yield return null;
-        }
-        spriteRenderer.material.SetColor("_BlinkColor", new Color(1, 1, 1, 0));
-        isBlinking = false;
     }
 
 
