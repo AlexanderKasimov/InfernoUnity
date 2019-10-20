@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitReaction_notCompleteWhiteWithDecay : HitReaction
+public class HitReaction_WhiteWithDecay : HitReaction
 {
 
     private bool isBlinking = false;
-    public float blinkDuration = 0.2f;
+    public float startDelay = 0.03f;
+    public float blinkDuration = 0.12f;
+    public float endDelay = 0.02f;
 
     private SpriteRenderer spriteRenderer;
 
@@ -25,6 +27,7 @@ public class HitReaction_notCompleteWhiteWithDecay : HitReaction
         float t = 0f;
         float materialAlpha = 1f;    
         spriteRenderer.material.SetColor("_BlinkColor", new Color(1, 1, 1, 1));
+        yield return new WaitForSeconds(startDelay);
         while (t <= blinkDuration)
         {
             t += Time.deltaTime;
@@ -33,6 +36,7 @@ public class HitReaction_notCompleteWhiteWithDecay : HitReaction
             yield return null;
         }
         spriteRenderer.material.SetColor("_BlinkColor", new Color(1, 1, 1, 0));
+        yield return new WaitForSeconds(endDelay);
         isBlinking = false;
     }
 

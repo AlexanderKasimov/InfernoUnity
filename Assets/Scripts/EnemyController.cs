@@ -6,7 +6,17 @@ public class EnemyController : MonoBehaviour
 {
     private RigidbodyMover rigidbodyMover;
 
-    private Vector2 movementVector;
+    //private Vector2 movementVector;
+    [HideInInspector]
+    public Vector2 movementVector;
+
+    //public Vector2 MovementVector
+    //{
+    //    get
+    //    {
+    //        return movementVector;
+    //    }
+    //}
 
     private GameObject target;
 
@@ -28,19 +38,14 @@ public class EnemyController : MonoBehaviour
     [HideInInspector]
     public bool isAttacking = false;
 
-    private Animator animator;
-
-    public GameObject hitMaskObject;
+    private Animator animator;   
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbodyMover = GetComponent<RigidbodyMover>();
         target = FindObjectOfType<PlayerController>().gameObject;
-        animator = GetComponent<Animator>();
-        hitMaskObject.GetComponent<Animator>().fireEvents = false;
-        GetComponent<DamageHandler>().hitMaskObject = hitMaskObject;
-        //hitMaskObject.GetComponent<SpriteRenderer>().material.SetColor("_BlinkColor", new Color(1, 1, 1, 0.3f));
+        animator = GetComponent<Animator>();   
     }
 
     // Update is called once per frame
@@ -109,14 +114,11 @@ public class EnemyController : MonoBehaviour
         //Rotate to movement
         if (movementVector.x < 0)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
-            hitMaskObject.GetComponent<SpriteRenderer>().flipX = true;
-
+            GetComponent<SpriteRenderer>().flipX = true;      
         }
         if (movementVector.x > 0)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
-            hitMaskObject.GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipX = false;   
         }
 
     }
@@ -126,14 +128,11 @@ public class EnemyController : MonoBehaviour
         isAttacking = true;
         //Update Animator
         animator.SetBool("isAttacking", isAttacking);
-        hitMaskObject.GetComponent<Animator>().SetBool("isAttacking", isAttacking);
-
         //yield return new WaitForSeconds(delayBeforeAttack);
         //AttackAction();
         yield return new WaitForSeconds(delayAfterAttack);
         isAttacking = false;
-        animator.SetBool("isAttacking", isAttacking);
-        hitMaskObject.GetComponent<Animator>().SetBool("isAttacking", isAttacking);
+        animator.SetBool("isAttacking", isAttacking);  
        
     }
 
@@ -179,5 +178,7 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+
+
 
 }

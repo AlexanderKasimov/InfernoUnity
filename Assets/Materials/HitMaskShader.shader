@@ -61,9 +61,14 @@ Shader "Unlit/HitMaskShader"
 				{
 					//fixed4 col = tex2D(_MainTex, i.uv);
 					//fixed4 tmp = float4(tex2D(_MainTex, i.uv).r,tex2D(_MainTex, i.uv).g,tex2D(_MainTex, i.uv).b,tex2D(_MainTex, i.uv).a);
+					
+				/*	float1 coef = 1;
+					fixed4 col = (_BlinkColor * _BlinkColor.a + float4(1,0,0,1)*float1(coef))*(_BlinkColor.a+coef);*/
 					//но идеально белый не получился, мб так лучше, но лучше проверить почему
 					fixed4 col = _BlinkColor * tex2D(_MainTex, i.uv).a*_BlinkColor.a + tex2D(_MainTex, i.uv)* tex2D(_MainTex, i.uv).a; //_BlinkColor * tex2D(_MainTex, i.uv).a;
-				//fixed4 col = _BlinkColor;
+					//fixed4 col = (_BlinkColor * tex2D(_MainTex, i.uv).a*_BlinkColor.a + tex2D(_MainTex, i.uv)* tex2D(_MainTex, i.uv).a) * (_BlinkColor.a+ tex2D(_MainTex, i.uv).a);
+					
+					//fixed4 col = _BlinkColor;
 
 				return col;
 				}

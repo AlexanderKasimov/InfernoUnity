@@ -8,13 +8,11 @@ public class DamageHandler : MonoBehaviour
 
     private float curHP;
 
-    //можно поставить true в isDead == бессмертие
     public bool isDead = false;
 
     private HitReaction hitReactionObject;
-    //для HitReaction использующего дубликаты
-    [HideInInspector]
-    public GameObject hitMaskObject;
+
+    public DeathObject deathObjectPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -34,9 +32,10 @@ public class DamageHandler : MonoBehaviour
         if (curHP <= 0)
         {
             HandleDeath();
+            return;
         }
 
-        //Blink Effect - лучше вынести в другой модуль? разделить графику от логики - зачем?
+        //Blink Effect
         hitReactionObject.StartBlinking();    
 
     }
@@ -44,6 +43,8 @@ public class DamageHandler : MonoBehaviour
     private void HandleDeath()
     {
         isDead = true;
+        DeathObject deathObject = Instantiate(deathObjectPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+        deathObject.lookDirection = GetComponent<EnemyController>().movementVector;
         Destroy(gameObject);
     }
 
