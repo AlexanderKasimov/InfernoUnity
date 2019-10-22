@@ -18,7 +18,7 @@ public class DamageHandler : MonoBehaviour
     void Start()
     {
         curHP = maxHP;
-        hitReactionObject = GetComponent<HitReaction>();
+        hitReactionObject = GetComponentInChildren<HitReaction>();       
     }
 
 

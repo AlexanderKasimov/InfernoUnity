@@ -5,18 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private RigidbodyMover rigidbodyMover;
-
-    //private Vector2 movementVector;
+  
     [HideInInspector]
     public Vector2 movementVector;
-
-    //public Vector2 MovementVector
-    //{
-    //    get
-    //    {
-    //        return movementVector;
-    //    }
-    //}
 
     private GameObject target;
 
@@ -38,19 +29,24 @@ public class EnemyController : MonoBehaviour
     [HideInInspector]
     public bool isAttacking = false;
 
-    private Animator animator;   
+    private Animator animator;
+
+    private EnemyGraphicsController graphicsController;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbodyMover = GetComponent<RigidbodyMover>();
         target = FindObjectOfType<PlayerController>().gameObject;
-        animator = GetComponent<Animator>();   
+        animator = GetComponent<Animator>();
+        graphicsController = GetComponentInChildren<EnemyGraphicsController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Update Graphics - будет запаздывать на 1 фрейм, но поидее без разницы
+        graphicsController.UpdateGraphics(movementVector, isAttacking);
         //3 круга
         float distanceToTarget = (target.transform.position - transform.position).magnitude;        
         if (distanceToTarget > bigRadius)
@@ -111,15 +107,7 @@ public class EnemyController : MonoBehaviour
 
         rigidbodyMover.SetMovementVector(movementVector);
 
-        //Rotate to movement
-        if (movementVector.x < 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;      
-        }
-        if (movementVector.x > 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;   
-        }
+
 
     }
 
@@ -127,12 +115,12 @@ public class EnemyController : MonoBehaviour
     {
         isAttacking = true;
         //Update Animator
-        animator.SetBool("isAttacking", isAttacking);
+        //animator.SetBool("isAttacking", isAttacking);
         //yield return new WaitForSeconds(delayBeforeAttack);
         //AttackAction();
         yield return new WaitForSeconds(delayAfterAttack);
         isAttacking = false;
-        animator.SetBool("isAttacking", isAttacking);  
+        //animator.SetBool("isAttacking", isAttacking);  
        
     }
 

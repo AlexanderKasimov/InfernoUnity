@@ -23,10 +23,13 @@ public class Weapon : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private float startYScale;
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        startYScale = transform.localScale.y;
     }
 
     public void Fire()
@@ -67,5 +70,16 @@ public class Weapon : MonoBehaviour
 
         float deltaRot = Mathf.Atan2(mousePosition.y - objectPosition.y, mousePosition.x - objectPosition.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, deltaRot);
+
+        //Orient to crosshair
+        float weaponRotation = transform.rotation.eulerAngles.z;
+        if (weaponRotation > 90 && weaponRotation < 270)
+        {            
+            transform.localScale = new Vector3(transform.localScale.x, -startYScale, transform.localScale.z);           
+        }
+        else
+        {            
+            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);            
+        }
     }
 }

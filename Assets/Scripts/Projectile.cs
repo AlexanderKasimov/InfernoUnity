@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour
 
     public GameObject destroyEffect;
 
+    private bool isHitted = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,13 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Защита от нанесения урона сразу N противникам
+        if (isHitted)
+        {
+            return;
+        }
+        isHitted = true;
+
         DamageHandler damageHandler = collision.gameObject.GetComponent<DamageHandler>();
         if (damageHandler != null)
         {
