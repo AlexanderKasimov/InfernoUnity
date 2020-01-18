@@ -12,7 +12,7 @@ public class HitReaction_SimpleWhite : HitReaction
 
     private SpriteRenderer spriteRenderer;
 
-    public override void StartBlinking()
+    public override void StartHitReaction()
     {
         if (!isBlinking)
         {
@@ -22,7 +22,7 @@ public class HitReaction_SimpleWhite : HitReaction
         } 
     }
 
-    public override IEnumerator Blink()
+    private IEnumerator Blink()
     {
         isBlinking = true;
         spriteRenderer.material = hitMaterial;

@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CasterAnimControllerOverride
+  m_Controller: {fileID: 9100000, guid: b5f46980b24b26c46acf1edde1d21601, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 59ed5a49edff9e148b0b7a5dab6b887e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c4fd2edb375e1a45957c454bdf305a7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c70451da1aaddbc47a498b605f79cc25, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 65273077fb22e384a8c228c2e7baa122, type: 2}

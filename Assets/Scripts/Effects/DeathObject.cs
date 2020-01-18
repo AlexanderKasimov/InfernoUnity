@@ -17,8 +17,8 @@ public class DeathObject : MonoBehaviour
         GetComponent<Animator>().speed = animationSpeed;
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         hitReaction = GetComponent<HitReaction>();
-        //Blink at start
-        hitReaction.StartBlinking();
+        //React to hit at start
+        hitReaction.StartHitReaction();
         //Rotate DeathObjects to lookDirection in moment of death
         if (lookDirection.x < 0)
         {
@@ -30,9 +30,4 @@ public class DeathObject : MonoBehaviour
         }     
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

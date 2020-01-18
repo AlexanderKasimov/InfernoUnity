@@ -5,8 +5,6 @@ using UnityEngine;
 public abstract class HitReaction : MonoBehaviour
 {
 
-    public abstract void StartBlinking();
-
-    public abstract IEnumerator Blink();
+    public abstract void StartHitReaction();   
 
 }

@@ -7,8 +7,8 @@ public class RigidbodyMover : MonoBehaviour
     private Rigidbody2D rb;
 
     public float speed = 2f;
-
-    private Vector2 movementVector;
+    [HideInInspector]
+    public Vector2 movementVector;
 
     // Start is called before the first frame update
     void Start()

@@ -11,10 +11,21 @@ public class EnemyGraphicsController : MonoBehaviour
 
     private bool isAttacking = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public float walkAnimSpeed = 0.7f;
+
+    private float attackAnimLength;
+
+    public string attackAnimName;
+
+    private void Awake()
     {
         animator = GetComponent<Animator>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {      
+        animator.SetFloat("walkAnimSpeed", walkAnimSpeed);
     }
 
     // Update is called once per frame
@@ -31,8 +42,25 @@ public class EnemyGraphicsController : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().flipX = false;
             }
-        }
+        } 
 
+    }
+
+    public void SetAttackParams(float attackLength)
+    {
+        //Найти длину анимации атаки - чтобы посчитать скорость проигрывания
+        AnimationClip[] animClips = animator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip animClip in animClips)
+        {
+            if (animClip.name == attackAnimName)
+            {
+                Debug.Log(animClip.name + " : " + animClip.length);
+                attackAnimLength = animClip.length;
+                break;
+            }
+        }
+        float attackAnimSpeed = attackAnimLength / attackLength;
+        animator.SetFloat("attackAnimSpeed", attackAnimSpeed);
     }
 
     //рефактор? - переход с булов на стейты?
@@ -40,13 +68,14 @@ public class EnemyGraphicsController : MonoBehaviour
     {
         this.movementVector = movementVector;
         this.isAttacking = isAttacking;
-        animator.SetBool("isAttacking", isAttacking);  
+        animator.SetBool("isAttacking", isAttacking);        
     }
 
+    //Деприцировать когда будет работать новая система
     public void OnDealDamage()
     {
-        EnemyController enemyController = GetComponentInParent<EnemyController>();
-        enemyController.DealDamage();
+        //EnemyController enemyController = GetComponentInParent<EnemyController>();
+        //enemyController.DealDamage();
     }
 
 }

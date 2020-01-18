@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float damage = 1f;
+    public float lifeTime = 0.2f;
 
     public Vector2 movementVector;
     private RigidbodyMover rigidbodyMover;
@@ -16,13 +17,19 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 2f);
+        Invoke("LifeTimeEnded", lifeTime);
         rigidbodyMover = GetComponent<RigidbodyMover>();
-        rigidbodyMover.SetMovementVector(movementVector);
+        rigidbodyMover.SetMovementVector(movementVector); 
         //rotate to movement - новый способ поворота вещей (Singed angle мб лучше) + мб лучше поворачивать сразу при спавне
         //если поворачивать здесь, то лучше инкапсулируется функционал, не нужно лезть в вепон чтобы менять поведение проджектайла
         float deltaRot = Mathf.Atan2(movementVector.y, movementVector.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, deltaRot);
+    }
+
+    private void LifeTimeEnded()
+    {
+        playVFX();
+        Destroy(gameObject);
     }
 
     // Update is called once per frame

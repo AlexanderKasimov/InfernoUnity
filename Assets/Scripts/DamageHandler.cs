@@ -36,7 +36,7 @@ public class DamageHandler : MonoBehaviour
         }
 
         //Blink Effect
-        hitReactionObject.StartBlinking();    
+        hitReactionObject.StartHitReaction();    
 
     }
 
