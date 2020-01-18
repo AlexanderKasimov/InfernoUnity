@@ -11,6 +11,12 @@ public class AttackAction_CastFireball : AttackAction
     override protected void DealDamage()
     {
         GameObject target = GameObject.FindGameObjectWithTag("Player");
+        //Остановка если игрок мертв
+        if (target == null)
+        {
+            return;
+        }
+
         Vector2 castDirection = (target.transform.position - transform.position).normalized;
 
         Projectile projectile = Instantiate(fireballPrefab, transform.position + (Vector3)castDirection * attackDistance, Quaternion.identity);

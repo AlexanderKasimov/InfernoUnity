@@ -46,15 +46,28 @@ public class EnemyController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {     
-        target = FindObjectOfType<PlayerController>().gameObject;         
+    {
+        PlayerController playerController = FindObjectOfType<PlayerController>();
+        if (playerController != null)
+        {
+            target = FindObjectOfType<PlayerController>().gameObject;
+        }        
         graphicsController.SetAttackParams(attackAction.attackLength);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //3 круга
+        //Остановка активности если игрок мертв - с переходом в айдл на месте
+        if (target == null || target.GetComponent<DamageHandler>().isDead)
+        {
+            movementVector = Vector2.zero;
+            isAttacking = attackAction.isAttacking;
+            graphicsController.UpdateGraphics(movementVector, isAttacking);
+            rigidbodyMover.SetMovementVector(movementVector);
+            return;
+        }
+        //3 круга       
         float distanceToTarget = (target.transform.position - transform.position).magnitude;        
         if (distanceToTarget > bigRadius)
         {

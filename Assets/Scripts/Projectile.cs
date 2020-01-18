@@ -14,6 +14,8 @@ public class Projectile : MonoBehaviour
 
     private bool isHitted = false;
 
+    public string layerNameToIgnore = "Player";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class Projectile : MonoBehaviour
         //если поворачивать здесь, то лучше инкапсулируется функционал, не нужно лезть в вепон чтобы менять поведение проджектайла
         float deltaRot = Mathf.Atan2(movementVector.y, movementVector.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, deltaRot);
+        
     }
 
     private void LifeTimeEnded()
@@ -32,15 +35,14 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {        
+        //Игнор указанного лейра
+        if (collision.gameObject.layer == LayerMask.NameToLayer(layerNameToIgnore))
+        {           
+            return;
+        }
+
         //Защита от нанесения урона сразу N противникам
         if (isHitted)
         {
@@ -64,7 +66,7 @@ public class Projectile : MonoBehaviour
 
     public void playVFX()
     {
-        Instantiate(destroyEffect, transform.position, Quaternion.Euler(0, 0, 0));
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
     }
 
 }

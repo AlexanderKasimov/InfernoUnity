@@ -8,8 +8,8 @@ public class Weapon : MonoBehaviour
     public GameObject muzzle;
 
     public Projectile projectilePrefab;
-
-    private Vector2 shootDirection;
+    [HideInInspector]
+    public Vector2 shootDirection;
 
     public float fireRate = 240f;
 

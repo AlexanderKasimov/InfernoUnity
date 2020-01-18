@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 289323635}
   - component: {fileID: 289323634}
   - component: {fileID: 289323632}
+  - component: {fileID: 289323633}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -264,6 +265,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dustEffectPrefab: {fileID: 5593508877289903262, guid: e48dc759179782140be2177ff39305bf,
+    type: 3}
+--- !u!114 &289323633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289323631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998900af1d72e1f4eae0738ee26514b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathObjectPrefab: {fileID: 4639447659205012199, guid: f52b311525f5e424d88a3c94932230a5,
     type: 3}
 --- !u!61 &289323634
 BoxCollider2D:
@@ -326,7 +341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 10
   isDead: 0
-  deathObjectPrefab: {fileID: 0}
 --- !u!114 &289323637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,6 +677,7 @@ MonoBehaviour:
   muzzle: {fileID: 1881311507}
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
+  shootDirection: {x: 0, y: 0}
   fireRate: 480
   useInaccuracy: 1
   maxInaccuracyAngle: 5
@@ -857,7 +872,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   isDead: 0
-  deathObjectPrefab: {fileID: 0}
 --- !u!114 &688151268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,6 +1208,7 @@ MonoBehaviour:
   muzzle: {fileID: 1643463597}
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
+  shootDirection: {x: 0, y: 0}
   fireRate: 480
   useInaccuracy: 1
   maxInaccuracyAngle: 5
@@ -1456,6 +1471,7 @@ MonoBehaviour:
   muzzle: {fileID: 528604958}
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
+  shootDirection: {x: 0, y: 0}
   fireRate: 480
   useInaccuracy: 1
   maxInaccuracyAngle: 5
@@ -1593,6 +1609,7 @@ MonoBehaviour:
   muzzle: {fileID: 34483053}
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
+  shootDirection: {x: 0, y: 0}
   fireRate: 480
   useInaccuracy: 1
   maxInaccuracyAngle: 5
@@ -1686,6 +1703,7 @@ MonoBehaviour:
   muzzle: {fileID: 939490552}
   projectilePrefab: {fileID: 8101322827916113799, guid: f831fb7fdce07cd4883512cb8ba2f9a0,
     type: 3}
+  shootDirection: {x: 0, y: 0}
   fireRate: 370
   useInaccuracy: 1
   maxInaccuracyAngle: 2
@@ -2004,7 +2022,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   isDead: 0
-  deathObjectPrefab: {fileID: 0}
 --- !u!114 &1507808218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2216,7 +2233,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   isDead: 0
-  deathObjectPrefab: {fileID: 0}
 --- !u!114 &1663446695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3034,7 +3050,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   isDead: 0
-  deathObjectPrefab: {fileID: 0}
 --- !u!114 &2002689654
 MonoBehaviour:
   m_ObjectHideFlags: 0

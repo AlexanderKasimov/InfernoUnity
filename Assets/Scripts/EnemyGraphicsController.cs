@@ -71,11 +71,4 @@ public class EnemyGraphicsController : MonoBehaviour
         animator.SetBool("isAttacking", isAttacking);        
     }
 
-    //Деприцировать когда будет работать новая система
-    public void OnDealDamage()
-    {
-        //EnemyController enemyController = GetComponentInParent<EnemyController>();
-        //enemyController.DealDamage();
-    }
-
 }

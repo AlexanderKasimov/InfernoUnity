@@ -155,195 +155,6 @@ TextureImporter:
       name: DoomGuy_Dissolve_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24fcb42f409b4b04a80d1d31de5ec4de
-      internalID: -9147441797930283497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoomGuy_Dissolve_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dac2a9dd361079847b714b1f41b4eab9
-      internalID: 2439166131869914570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoomGuy_Dissolve_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d7e891782694f14080e54d7aa37f054
-      internalID: -6604090750459958399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoomGuy_Dissolve_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da37835ff55f7cc49ae09742bd5b59cc
-      internalID: 7996048568611011250
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoomGuy_Dissolve_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08b17fa9c5fe2e34499d126e98a1a10a
-      internalID: 2702530584945310102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoomGuy_Dissolve_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37320e6457d99dc46b02e1e2be995512
-      internalID: 7028090611320664882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoomGuy_Dissolve_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a0ab925479bc1e42a591d51f0fa4a24
-      internalID: -1074670766824084386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoomGuy_Dissolve_7
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96d53745ea23cb14ea7a362399777bed
-      internalID: 7768101071228897686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoomGuy_Dissolve_8
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 920148c5137d3824dabcb3f4013819e9
-      internalID: 1841835735859263979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoomGuy_Dissolve_9
-      rect:
-        serializedVersion: 2
         x: 432
         y: 0
         width: 48
@@ -355,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 922425e2830b37c4db87982d9b2c35c2
-      internalID: 6582022324183917436
+      spriteID: 2219341e72e802747b716a402c52c5c9
+      internalID: -9147441797930283497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_10
+      name: DoomGuy_Dissolve_1
       rect:
         serializedVersion: 2
         x: 480
@@ -376,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fc46ce9b7f05bf4087cf93cd3c8ca5b
-      internalID: -8493614155998417201
+      spriteID: fbd2c58490e197f48a791c2ab2b9d782
+      internalID: 2439166131869914570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_11
+      name: DoomGuy_Dissolve_2
       rect:
         serializedVersion: 2
         x: 528
@@ -397,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe7c8c928b27ba44db3239912d30ad06
-      internalID: -733582452670602996
+      spriteID: 1c4ebc0066187464381c6db721fe3d42
+      internalID: -6604090750459958399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_12
+      name: DoomGuy_Dissolve_3
       rect:
         serializedVersion: 2
         x: 576
@@ -418,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eafbeab73ffa8c347858358352550f0a
-      internalID: -5690650527804499899
+      spriteID: 3326435dda5c3824e80dfb90b8bd6660
+      internalID: 7996048568611011250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_13
+      name: DoomGuy_Dissolve_4
       rect:
         serializedVersion: 2
         x: 624
@@ -439,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 529d7899cc56854459d4adfee0ab63a6
-      internalID: -3199481094767041745
+      spriteID: 5dc46a49e87b13e41a1eb447f35de209
+      internalID: 2702530584945310102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_14
+      name: DoomGuy_Dissolve_5
       rect:
         serializedVersion: 2
         x: 672
@@ -460,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 893a580544b50dc4c831e17e27c50e38
-      internalID: -536255739630293347
+      spriteID: db265f7959aef73459554b698b2c72cc
+      internalID: 7028090611320664882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_15
+      name: DoomGuy_Dissolve_6
       rect:
         serializedVersion: 2
         x: 720
@@ -481,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bc2896ba9543f3488550a04493807a7
-      internalID: 2729404261395349785
+      spriteID: f2b3c2fb970a47d489e5cfbd15ee085a
+      internalID: -1074670766824084386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_16
+      name: DoomGuy_Dissolve_7
       rect:
         serializedVersion: 2
         x: 768
@@ -502,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b60a23d72fb3ee4ca0797797ce76525
-      internalID: -3604818288773332952
+      spriteID: 99ebfaab0d648e34ba3529ff31f80abd
+      internalID: 7768101071228897686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_17
+      name: DoomGuy_Dissolve_8
       rect:
         serializedVersion: 2
         x: 816
@@ -523,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: effb3a6ff430ce04e9a5ee4992ee5cd2
-      internalID: 8766870129260243081
+      spriteID: 6c19d6fd843c45e46818647f026c5bfc
+      internalID: 1841835735859263979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_18
+      name: DoomGuy_Dissolve_9
       rect:
         serializedVersion: 2
         x: 864
@@ -544,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d0a93a7d661d5d418572f05af3727bf
-      internalID: -2329157551670439685
+      spriteID: ef256cc998d6a0d468095172aec5c390
+      internalID: 6582022324183917436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_19
+      name: DoomGuy_Dissolve_10
       rect:
         serializedVersion: 2
         x: 912
@@ -565,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d78ad58a005854982441ab19e1a3a0
-      internalID: -8994986803334655136
+      spriteID: 093fdeec57d77af449074b1936d49be8
+      internalID: -8493614155998417201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_20
+      name: DoomGuy_Dissolve_11
       rect:
         serializedVersion: 2
         x: 960
@@ -586,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b26b4cc6bf3a53245b9d013bf9fad205
-      internalID: -8221674283000289560
+      spriteID: 1d9184c7e36f6c542bb144b732c7072a
+      internalID: -733582452670602996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoomGuy_Dissolve_21
+      name: DoomGuy_Dissolve_12
       rect:
         serializedVersion: 2
         x: 1008
@@ -607,8 +418,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 241f8811a5b0c4d4e872c5ae67a9a533
-      internalID: 6921058157562577076
+      spriteID: 179f97ae23b34dd4fac0e7a2adc3fcbe
+      internalID: -5690650527804499899
       vertices: []
       indices: 
       edges: []
