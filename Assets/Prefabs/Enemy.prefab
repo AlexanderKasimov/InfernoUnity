@@ -296,7 +296,7 @@ MonoBehaviour:
   attackPoint: 0.5
   delayAfterAttack: 0.2
   isAttacking: 0
-  attackDistance: 0.7
+  attackDistance: 0.2
   attackBoxSize: 0.5
 --- !u!114 &8096413876074290667
 MonoBehaviour:

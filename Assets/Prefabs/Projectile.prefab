@@ -144,10 +144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  lifeTime: 0.23
+  lifeTime: 0.3
   movementVector: {x: 0, y: 0}
   destroyEffect: {fileID: 808892506758207462, guid: 7198edf835015d14aa5b04586b54ec68,
     type: 3}
+  layerNameToIgnore: Player
 --- !u!114 &4543231611526542906
 MonoBehaviour:
   m_ObjectHideFlags: 0

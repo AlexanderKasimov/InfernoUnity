@@ -11,6 +11,7 @@ public class CursorChanger : MonoBehaviour
     void Start()
     {
         Cursor.SetCursor(texture, new Vector2(texture.width/2, texture.width/2), CursorMode.ForceSoftware);
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame

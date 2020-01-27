@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     [HideInInspector]
     public Vector2 shootDirection;
 
+    public float damage = 1f;
     public float fireRate = 240f;
 
     public bool useInaccuracy = true;
@@ -45,6 +46,7 @@ public class Weapon : MonoBehaviour
 
         Projectile projectile = Instantiate(projectilePrefab, muzzle.transform.position, Quaternion.Euler(0, 0, 0));
         projectile.movementVector = spreadDir;
+        projectile.damage = damage;
 
         //Play SFX
         if (useRandomPitch)
