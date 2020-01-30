@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-
+    //становиться слишком большим классом - вынести графику в компонент? или выстрел?
     public GameObject muzzle;
 
     public Projectile projectilePrefab;
@@ -26,11 +26,21 @@ public class Weapon : MonoBehaviour
 
     private float startYScale;
 
+    public bool useMuzzleEffect = true;
+    public Effect muzzleFlashEffect;
+
+    public bool useGunKick = true;
+    private bool isGunKick = false;
+    private Vector3 defaultLocalPosition;
+    private ZSorting zSorting;
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         startYScale = transform.localScale.y;
+        defaultLocalPosition = transform.localPosition;
+        zSorting = GetComponent<ZSorting>();
     }
 
     public void Fire()
@@ -59,6 +69,46 @@ public class Weapon : MonoBehaviour
         }
       
         audioSource.Play();
+
+        //Play VFX - muzzle
+        if (useMuzzleEffect)
+        {
+            float deltaRot = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+            Effect muzzleflash = Instantiate(muzzleFlashEffect, transform.position, Quaternion.Euler(0f, 0f, deltaRot));
+            muzzleflash.PlayEffect((fireRate / 60f) / muzzleflash.GetAnimLength());
+        }      
+
+
+        //Start GunKick
+        if (useGunKick && !isGunKick)
+        {
+            StartCoroutine("GunKick");
+        }
+
+    }
+
+    //требуется рефактор + замена лерпа? кастомное время
+    private IEnumerator GunKick()
+    {
+        isGunKick = true;
+        float t = 0;
+        Vector2 newLocalPosition = Vector2.zero;
+        while (t <=  30f/fireRate)
+        {
+            t += Time.deltaTime;
+            newLocalPosition = Vector2.Lerp(defaultLocalPosition, (Vector2)defaultLocalPosition + shootDirection * -1f * 0.1f, t / (30f / fireRate));
+            transform.localPosition = new Vector3(newLocalPosition.x, newLocalPosition.y, transform.localPosition.z);          
+            yield return null;
+        }
+        while (t < 60f/fireRate)
+        {
+            t += Time.deltaTime;
+            newLocalPosition = Vector2.Lerp((Vector2)defaultLocalPosition + shootDirection * -1f * 0.1f, defaultLocalPosition, t / (60f / fireRate));
+            transform.localPosition = new Vector3(newLocalPosition.x, newLocalPosition.y, transform.localPosition.z);
+            yield return null;
+        }
+        transform.localPosition = new Vector3(defaultLocalPosition.x, defaultLocalPosition.y, transform.localPosition.z);  
+        isGunKick = false;
     }
 
 

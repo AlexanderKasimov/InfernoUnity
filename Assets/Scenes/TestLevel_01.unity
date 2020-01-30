@@ -691,6 +691,9 @@ MonoBehaviour:
   minPitch: 0.6
   maxPitch: 0.9
   defaultPitch: 1
+  useMuzzleEffect: 1
+  muzzleFlashEffect: {fileID: 0}
+  useGunKick: 1
 --- !u!4 &631898326
 Transform:
   m_ObjectHideFlags: 0
@@ -1067,7 +1070,7 @@ GameObject:
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &951257054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1226,9 @@ MonoBehaviour:
   minPitch: 0.6
   maxPitch: 0.9
   defaultPitch: 1
+  useMuzzleEffect: 1
+  muzzleFlashEffect: {fileID: 0}
+  useGunKick: 1
 --- !u!4 &1076401094
 Transform:
   m_ObjectHideFlags: 0
@@ -1487,6 +1493,9 @@ MonoBehaviour:
   minPitch: 0.6
   maxPitch: 0.9
   defaultPitch: 1
+  useMuzzleEffect: 1
+  muzzleFlashEffect: {fileID: 0}
+  useGunKick: 1
 --- !u!212 &1201974753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1626,6 +1635,9 @@ MonoBehaviour:
   minPitch: 0.6
   maxPitch: 0.9
   defaultPitch: 1
+  useMuzzleEffect: 1
+  muzzleFlashEffect: {fileID: 0}
+  useGunKick: 1
 --- !u!212 &1363952445
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1721,6 +1733,10 @@ MonoBehaviour:
   minPitch: 0.7
   maxPitch: 0.8
   defaultPitch: 0.7
+  useMuzzleEffect: 0
+  muzzleFlashEffect: {fileID: 172202194396421005, guid: a1e7429e1408e4a49b215747ff19241d,
+    type: 3}
+  useGunKick: 1
 --- !u!4 &1382099166
 Transform:
   m_ObjectHideFlags: 0
@@ -2659,7 +2675,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.2
+  orthographic size: 3.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2696,7 +2712,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869499549}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53bf82f67e2ddd0449c23495255a5820, type: 3}
   m_Name: 
