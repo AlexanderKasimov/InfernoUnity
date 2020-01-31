@@ -694,6 +694,9 @@ MonoBehaviour:
   useMuzzleEffect: 1
   muzzleFlashEffect: {fileID: 0}
   useGunKick: 1
+  gunKickTime: 0.05
+  gunKickReturnTime: 0.1
+  gunKickLength: 0.1
 --- !u!4 &631898326
 Transform:
   m_ObjectHideFlags: 0
@@ -1229,6 +1232,9 @@ MonoBehaviour:
   useMuzzleEffect: 1
   muzzleFlashEffect: {fileID: 0}
   useGunKick: 1
+  gunKickTime: 0.05
+  gunKickReturnTime: 0.1
+  gunKickLength: 0.1
 --- !u!4 &1076401094
 Transform:
   m_ObjectHideFlags: 0
@@ -1496,6 +1502,9 @@ MonoBehaviour:
   useMuzzleEffect: 1
   muzzleFlashEffect: {fileID: 0}
   useGunKick: 1
+  gunKickTime: 0.05
+  gunKickReturnTime: 0.1
+  gunKickLength: 0.1
 --- !u!212 &1201974753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1638,6 +1647,9 @@ MonoBehaviour:
   useMuzzleEffect: 1
   muzzleFlashEffect: {fileID: 0}
   useGunKick: 1
+  gunKickTime: 0.05
+  gunKickReturnTime: 0.1
+  gunKickLength: 0.1
 --- !u!212 &1363952445
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1737,6 +1749,9 @@ MonoBehaviour:
   muzzleFlashEffect: {fileID: 172202194396421005, guid: a1e7429e1408e4a49b215747ff19241d,
     type: 3}
   useGunKick: 1
+  gunKickTime: 0.03
+  gunKickReturnTime: 0.1
+  gunKickLength: 0.13
 --- !u!4 &1382099166
 Transform:
   m_ObjectHideFlags: 0
