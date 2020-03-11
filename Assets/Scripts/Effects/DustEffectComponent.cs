@@ -29,10 +29,5 @@ public class DustEffectComponent : MonoBehaviour
             }           
         }  
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

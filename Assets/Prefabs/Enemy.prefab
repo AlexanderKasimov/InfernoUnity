@@ -293,11 +293,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackLength: 0.5
-  attackPoint: 0.5
+  attackActionPositionOnLength: 0.5
   delayAfterAttack: 0.2
   isAttacking: 0
-  attackDistance: 0.2
-  attackBoxSize: 0.5
+  attackVectorMultiplayer: 0.3
+  attackBoxSize: {x: 0.5, y: 0.5}
 --- !u!114 &8096413876074290667
 MonoBehaviour:
   m_ObjectHideFlags: 0

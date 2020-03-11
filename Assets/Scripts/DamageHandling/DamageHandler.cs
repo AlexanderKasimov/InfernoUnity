@@ -7,7 +7,7 @@ public class DamageHandler : MonoBehaviour
     public float maxHP = 3f;
 
     private float curHP;
-
+    [HideInInspector]
     public bool isDead = false;
 
     private HitReaction hitReactionObject;    

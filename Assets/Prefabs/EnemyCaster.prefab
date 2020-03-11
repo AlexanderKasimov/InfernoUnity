@@ -181,7 +181,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 710200229448331067}
-  - {fileID: 5552983661046572906}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -294,11 +293,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackLength: 0.7
-  attackPoint: 0.5
+  attackActionPositionOnLength: 0.5
   delayAfterAttack: 1
   isAttacking: 0
-  attackDistance: 0.7
-  attackBoxSize: 0.5
+  attackVectorMultiplayer: 0.5
   fireballPrefab: {fileID: 2674430862081023311, guid: 1b0cae134a6cfad40888d9197a4ba309,
     type: 3}
 --- !u!114 &1883709203445944610
@@ -315,33 +313,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathObjectPrefab: {fileID: 9135898319284219733, guid: f552d757b12115c47aa2ed7993887e2c,
     type: 3}
---- !u!1 &3354598054338244868
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5552983661046572906}
-  m_Layer: 9
-  m_Name: CastPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5552983661046572906
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354598054338244868}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.322, y: 0.568, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2909951244746369798}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

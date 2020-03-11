@@ -30,9 +30,10 @@ public class Weapon : MonoBehaviour
     public Effect muzzleFlashEffect;
 
     public bool useGunKick = true;
-    public float gunKickTime = 0.05f;
-    public float gunKickReturnTime = 0.1f;
-    public float gunKickLength = 0.1f;
+    public bool useSmoothDampOnKickFirstHalf = true;
+    public float gunKickFirstHalfLength = 0.05f;
+    public float gunKickSecondHalfLength = 0.1f;
+    public float gunKickDistance = 0.1f;
 
     private bool isGunKick = false;
     private Vector3 defaultLocalPosition;
@@ -47,7 +48,7 @@ public class Weapon : MonoBehaviour
 
     public void Fire()
     {
-        //Добавить разброс
+        //Разброс
         Vector2 spreadDir = shootDirection;
         if (useInaccuracy)
         {
@@ -89,28 +90,35 @@ public class Weapon : MonoBehaviour
 
     }
 
-    //решить что делать с Lerp - но вроде пока good enough, лучше тестить вместе с камера шейком
+    //Lerp - вроде пока good enough, лучше тестить вместе с камера шейком
+    //можно добавить рандома в продолжительность стадий и расстояние
+    //добавить небольшой поворот, разделив логику с графикой ?????
     private IEnumerator GunKick()
     {
         isGunKick = true;
         float t = 0;
         Vector2 newLocalPosition = Vector2.zero;
-        //? для SmoothDamp
-        Vector2 uselessVelocityValue = Vector2.zero;
-        while (t <= gunKickTime)
+        //для SmoothDamp
+        Vector2 velocityValue = Vector2.zero;
+        while (t <= gunKickFirstHalfLength)
         {
             t += Time.deltaTime;
             //SmoothDamp странно работает - особенно при возврате оружия
-            //newLocalPosition = Vector2.SmoothDamp(defaultLocalPosition, (Vector2)defaultLocalPosition + shootDirection * -gunKickLength,ref uselessVelocityValue, t / gunKickTime);
-            newLocalPosition = Vector2.Lerp(defaultLocalPosition, (Vector2)defaultLocalPosition + shootDirection * -gunKickLength, t / gunKickTime);
+            if (useSmoothDampOnKickFirstHalf)
+            {
+                newLocalPosition = Vector2.SmoothDamp(defaultLocalPosition, (Vector2)defaultLocalPosition + shootDirection * -gunKickDistance, ref velocityValue, t / gunKickFirstHalfLength);
+            }
+            else
+            {
+                newLocalPosition = Vector2.Lerp(defaultLocalPosition, (Vector2)defaultLocalPosition + shootDirection * -gunKickDistance, t / gunKickFirstHalfLength);
+            }   
             transform.localPosition = new Vector3(newLocalPosition.x, newLocalPosition.y, transform.localPosition.z);          
             yield return null;
         }
-        while (t < gunKickReturnTime)
+        while (t < gunKickSecondHalfLength)
         {
-            t += Time.deltaTime;
-            //newLocalPosition = Vector2.SmoothDamp((Vector2)defaultLocalPosition + shootDirection * -gunKickLength, defaultLocalPosition, ref uselessVelocityValue, t / gunKickTime);
-            newLocalPosition = Vector2.Lerp((Vector2)defaultLocalPosition + shootDirection * -gunKickLength, defaultLocalPosition, t / gunKickReturnTime);
+            t += Time.deltaTime;       
+            newLocalPosition = Vector2.Lerp((Vector2)defaultLocalPosition + shootDirection * -gunKickDistance, defaultLocalPosition, t / gunKickSecondHalfLength);
             transform.localPosition = new Vector3(newLocalPosition.x, newLocalPosition.y, transform.localPosition.z);
             yield return null;
         }

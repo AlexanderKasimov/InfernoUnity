@@ -5,8 +5,9 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public int waveCount = 3;
+    public int wavesNumber = 3;
     public int enemiesInWave = 3;
+    public float firstSpawnDelay = 0f;
     public float delayBetweenWaves = 8f;
     public float spawnRadius = 2f;
     
@@ -20,14 +21,15 @@ public class Spawner : MonoBehaviour
     IEnumerator Spawn()
     {
         int curWave = 0;
-        while (curWave < waveCount)
+        yield return new WaitForSeconds(firstSpawnDelay);
+        while (curWave < wavesNumber)
         {
             for (int i = 0; i < enemiesInWave; i++)
             {
                 //Рандомный оффсет от центра спавнера
                 Vector2 spawnOffset = Random.insideUnitCircle * spawnRadius;
 
-                Instantiate(enemyPrefab, (Vector2)transform.position + spawnOffset, Quaternion.Euler(0f, 0f, 0f));
+                Instantiate(enemyPrefab, (Vector2)transform.position + spawnOffset, Quaternion.identity);
             }
             curWave++;
             yield return new WaitForSeconds(delayBetweenWaves);
@@ -35,9 +37,4 @@ public class Spawner : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

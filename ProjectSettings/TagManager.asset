@@ -16,10 +16,10 @@ TagManager:
   - Player
   - Enemy
   - Projectile
-  - 
-  - 
-  - 
-  - 
+  - ProjectileWall
+  - PlayerWall
+  - EnemyWall
+  - CharacterWall
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3610528533
+    locked: 0
+  - name: Front
+    uniqueID: 1628381897
     locked: 0
